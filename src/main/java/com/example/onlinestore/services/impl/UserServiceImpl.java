@@ -43,13 +43,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUser(long id) {
-        User user = repository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Пользователь с таким id не найден"));
-        repository.delete(user);
-    }
-
-    @Override
     public List<UserDTO> getAllUsers() {
         List<User> userList = repository.findAll();
         return
@@ -64,4 +57,12 @@ public class UserServiceImpl implements UserService {
         User updatedUser = repository.save(userToUpdate);
         return modelMapper.map(updatedUser, UserDTO.class);
     }
+
+    @Override
+    public void deleteUser(long id) {
+        User user = repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Пользователь с таким id не найден"));
+        repository.delete(user);
+    }
+
 }

@@ -55,6 +55,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDTO> getProductsByTitle(String title) {
         List<Product> productList = repository.findByTitleContaining(title);
+        System.out.println();
         return productList.stream()
                 .map(product -> modelMapper.map(product, ProductDTO.class))
                 .collect(Collectors.toList());

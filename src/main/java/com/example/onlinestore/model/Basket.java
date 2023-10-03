@@ -14,6 +14,7 @@ import java.util.List;
 public class Basket {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @OneToOne(fetch = FetchType.LAZY)

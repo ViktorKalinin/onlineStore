@@ -10,11 +10,11 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "products")
+@Table(name = "product")
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 

@@ -23,7 +23,7 @@ public class AdminController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDTO> getUserById(@PathVariable("id") long id){
+    public ResponseEntity<UserDTO> getUserById(@PathVariable long id){
         UserDTO user = userService.getById(id);
         if(user != null){
             return ResponseEntity.ok(user);
@@ -31,7 +31,7 @@ public class AdminController {
     }
 
     @GetMapping("/username/{userName}")
-    public ResponseEntity<UserDTO> getUserByName(@PathVariable("userName") String userName){
+    public ResponseEntity<UserDTO> getUserByName(@PathVariable String userName){
         UserDTO user = userService.getByUserName(userName);
         if(user != null){
             return ResponseEntity.ok(user);
@@ -45,7 +45,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable("id") long id){
+    public ResponseEntity<Void> deleteUser(@PathVariable long id){
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
