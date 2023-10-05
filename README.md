@@ -9,6 +9,7 @@
 - Maven
 - Git
 - RESTful API
+- JUnit5
 
 ## Функциональность:
 
